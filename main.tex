@@ -1,0 +1,109 @@
+\documentclass[11pt,ngerman,fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[landscape,a4paper]{geometry}
+\geometry{verbose,tmargin=0.075cm,bmargin=0.075cm,lmargin=0.075cm,rmargin=0.075cm}
+\pagestyle{empty}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+
+\makeatletter
+
+\usepackage[ngerman]{babel}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+\usepackage[nosf]{kpfonts}
+\usepackage[t1]{sourcesanspro}
+%\usepackage[lf]{MyriadPro}
+%\usepackage[lf,minionint]{MinionPro}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+
+
+\let\bar\overline
+
+\definecolor{myblue}{cmyk}{1,.72,0,.38}
+\definecolor{myorange}{cmyk}{0,0.5,1,0}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\everymath\expandafter{\the\everymath \color{myblue}}
+\everydisplay\expandafter{\the\everydisplay \color{myblue}}
+\newcommand{\hilight}[1]{\textcolor{myorange}{#1}}
+
+%\setlength{\columnseprule}{0.4pt} %uncomment if you want separating lines between cols
+
+
+%---------------------------------
+%% stuff for compact spacing
+
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\color{myorange}\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\sffamily\bfseries}}
+                                
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{0ex}{0ex} %{indent from left side}{indent to top}{indent to bottom}
+\titlespacing{\subsection}{0pt}{0ex}{0ex}
+\titlespacing{\subsubsection}{0pt}{0ex}{0ex}
+
+\usepackage{parskip}
+\setlength{\parskip}{-1.3pt} %set space after paragraph
+
+\usepackage[
+	all=normal, 
+	mathspacing=tight, 
+	%wordspacing=tight, 
+	%tracking=tight, 
+	%charwidths=tight,
+	%leading=tight, 
+	%indent=tight
+	]{savetrees}
+\usepackage[condensed,math]{iwona}
+
+\usepackage[light]{antpolt}
+\usepackage[T1]{fontenc}
+
+%\setlength{\columnsep}{1em} %space between columns
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+\usepackage{setspace}
+\setstretch{0.1}
+
+
+%% stuff for compact spacing: End
+%---------------------------------
+
+
+
+\begin{document}
+
+\begin{multicols*}{4}
+
+\input{Regression}
+\input{Classification}
+\input{Kernels}
+\input{Imbalance}
+\input{Multi-class}
+\input{NeuralNetworks}
+\input{Clustering}
+\input{DimensionReduction}
+\input{ProbabilityModeling}
+\input{DecisionTheory}
+\input{Generative}
+\input{Latent}
+\input{Important}
+\input{Probabilities}
+
+\end{multicols*}
+
+\end{document}
